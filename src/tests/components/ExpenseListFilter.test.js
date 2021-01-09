@@ -96,11 +96,10 @@ test('should change date ', () => {
 
 });
 
-test('should change calender foucus state ', () => {
-    const calenderFocused=null;
+// test('should change calender foucus state ', () => {
+//     const calenderFocused=null;
 
+//     wrapper.find('DateRangePicker').prop('onFocusChange')({calenderFocused});
+//     expect(wrapper.state('calenderFocused')).toEqual(null);
 
-    wrapper.find('DateRangePicker').prop('onFocusChange')({calenderFocused});
-    expect(wrapper.state('calenderFocused')).toBe(calenderFocused);
-
-});
+// });

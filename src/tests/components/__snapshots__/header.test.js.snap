@@ -8,7 +8,7 @@ exports[`Should render header 1`] = `
   <NavLink
     activeClassName="is-active"
     exact={true}
-    to="/"
+    to="/expensify"
   >
     Go To Home
   </NavLink>
