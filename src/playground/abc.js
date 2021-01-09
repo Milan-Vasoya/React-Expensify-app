@@ -1,74 +1,23 @@
-import {createStore} from 'redux';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'normalize.css/normalize.css'
+import { Provider } from 'react-redux';
+import configureStore from './store/configureStore';
+import { addExpense } from './actions/expenses';
+import { setTextFilter } from './actions/filters';
+import getvisiablExpenses from './selectors/expenses';
+import './styles/styles.scss';
+import AppRouter from './routers/AppRouter';
+import 'react-dates/lib/css/_datepicker.css';
 
-const incrementCount =({incrementBy = 1}={})=>({
-    type:'INCREMENT',
-    incrementBy
-});
+const store = configureStore();
 
-const decrementCount=({decrementBy = 1}={})=>({
-    type : 'DECREMENT',
-    decrementBy
-});
+const jsx = (
 
-const resetCount=()=>({
-    type : 'RESET',
-});
-
-const setCount = ({count = 0}={})=>({
-    type :'SET',
-    count
-
-});
-const store = createStore((state={count:0}, action)=>{
-    
-    switch(action.type){
-        
-        case 'INCREMENT':
-        return{
-                count: state.count + action.incrementBy
-            };
-            case 'DECREMENT':
-               return{
-                    count: state.count - action.decrementBy
-                };
-            case 'RESET':
-               
-                return{
-                    count: 0
-                };
-            case 'SET':
-                const count = action.count?action.count:0;
-                return{
-                    count
-                };
-        default:
-            return state;
-        
-
-    }
-    
-   
-});
-
-const unsbscribe= store.subscribe(()=>{
-    console.log(store.getState())
-});
-
-store.dispatch(
-    {
-        type : 'INCREMENT',
-        incrementBy : 5
-    }
+    <Provider store={store}>
+        <AppRouter />
+    </Provider>
 );
 
-store.dispatch(incrementCount());
-
-
-store.dispatch(
-resetCount()
-);
-
-store.dispatch(decrementCount({decrementBy:8}));
-
-store.dispatch(setCount({count:502}));
+ReactDOM.render(jsx, document.getElementById('app'));
 

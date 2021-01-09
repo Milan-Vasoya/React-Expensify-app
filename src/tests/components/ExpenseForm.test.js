@@ -63,6 +63,15 @@ test('Should test set the amount in form',()=>{
 });
 
 test('Should not set amount in form',()=>{
+
+
+ /*  As a serving web developer at XYZ, I am working as a full-time developer, my responsibilities are to work with the team, 
+ Sometimes I need communicate with customers and solve their confusion, as well as understating their non-technical perspective and give some suggestions to them.
+  I learned a lot such as advanced concepts of Database and security, working with third-party libraries and APIs, 
+  and how to reduce and reuse the code in a very efficient manner to build faster, user-friendly, and responsive websites. 
+  Life after the mundane 9 to 5 has taught me more than I could ever learn at the job. Interaction with the internet and some of my friends made my hunger for education more,
+   I started to take more and more interest in Data Science. 
+*/
     const value="103.225"
     const wrapper= shallow(<Expenseform />);
     
