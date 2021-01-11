@@ -13,7 +13,7 @@ export const ExpenseListHeader =({expensesCount,totalExpenseAmount})=>{
     
     return(
         <div>
-            viewing {expensesCount} {expenseWord} Total amount: {totalformattedAmount}
+           <h1> viewing {expensesCount} {expenseWord} Total amount: {totalformattedAmount} </h1>
         </div>
     );
 };
