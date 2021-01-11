@@ -2,6 +2,7 @@
 
 exports[`Should add three item in expense list  1`] = `
 <div>
+  <Connect(ExpenseListHeader) />
   <Connect(ExpenseListFilters) />
   <Connect(ExpenseList) />
 </div>

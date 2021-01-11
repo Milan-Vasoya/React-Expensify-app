@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render correctly with Multiple data 1`] = `
+<div>
+  viewing 
+  3
+   
+  expeses
+   Total amount: 
+  $2,355.67
+</div>
+`;
+
+exports[`should render correctly with one data 1`] = `
+<div>
+  viewing 
+  1
+   
+  expense
+   Total amount: 
+  $2.35
+</div>
+`;
