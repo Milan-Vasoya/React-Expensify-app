@@ -5,12 +5,14 @@ import {
     startAddExpense,
     setExpenses,
     startSetExpense,
-    startRemoveExpense
+    startRemoveExpense,
+    startEditExpense
 } from '../actions/expenses';
 import expenses from './fixture/expenses';
 import dataBase from '../firebase/firebase';
 import configureMockStore from 'redux-mock-store';
 import thunk from 'redux-thunk';
+import { start } from 'live-server';
 
 const createMockStore = new configureMockStore([thunk]);
 beforeEach((done) => {
@@ -56,6 +58,25 @@ test('should setup Edit Expense', () => {
         }
     });
 });
+
+
+test('should Edit Expenses from Firebase',(done)=>{
+    const store = createMockStore({});
+    const id = expenses[1].id;
+    const updates={
+        description:'milan'
+    }
+     store.dispatch(startEditExpense(id,updates)).then(()=>{
+         const action = store.getActions();
+         expect(action[0]).toEqual({
+             type:'EDIT_EXPENSE',
+             id,
+             updates
+         });
+         done();
+     });
+});
+
 test('should setup Add Expense with value', () => {
 
 
