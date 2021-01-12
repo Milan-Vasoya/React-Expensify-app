@@ -101,3 +101,27 @@ test('EDIT ITEM with an valid id from reducer', () => {
 
     expect(state).toEqual(expenses);
 });
+
+test('should set expenses',()=>{
+
+    
+    const expensesData=[{
+        description: 'milan',
+        note: 'milan',
+        amount: 1500,
+        createdAt: 0,
+        id:5
+    },{
+        description: 'kenil',
+        note: 'kenil',
+        amount: 1500,
+        createdAt: 0,
+        id:6
+    }]
+    const action={
+        type:'SET_EXPENSES',
+        expenses
+    }
+    const state =expenseReducer(expensesData,action);
+    expect(state).toEqual(expenses);
+});
