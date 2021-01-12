@@ -4,7 +4,7 @@ exports[`Should add three item in expense list  1`] = `
 <div>
   404 
   <Link
-    to="/"
+    to="/expensify"
   >
     Go To Home
   </Link>

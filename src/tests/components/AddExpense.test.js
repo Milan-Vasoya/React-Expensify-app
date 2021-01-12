@@ -8,21 +8,21 @@ import expenses from '../fixture/expenses'
 
 
 test('Should render AddExpense page correctly', () => {
-    const addExpense = jest.fn();
+    const startAddExpense = jest.fn();
     const history = { push: jest.fn() };
-    const wrapper = shallow(<AddExpensePage addExpense={addExpense} history={history} />);
+    const wrapper = shallow(<AddExpensePage startAddExpense={startAddExpense} history={history} />);
     expect(wrapper).toMatchSnapshot();
 
     
 });
 
 test('should handle on submit', () => {
-    const addExpense = jest.fn();
+    const startAddExpense = jest.fn();
     const history = { push: jest.fn() };
-    const wrapper = shallow(<AddExpensePage addExpense={addExpense} history={history} />);
+    const wrapper = shallow(<AddExpensePage startAddExpense={startAddExpense} history={history} />);
     wrapper.find('Expenseform').prop('onSubmit')(expenses[1]);
-    expect(history.push).toHaveBeenLastCalledWith('/');
-    expect(addExpense).toHaveBeenLastCalledWith(expenses[1]);
+    expect(history.push).toHaveBeenLastCalledWith('/expensify');
+    expect(startAddExpense).toHaveBeenLastCalledWith(expenses[1]);
 
 
 

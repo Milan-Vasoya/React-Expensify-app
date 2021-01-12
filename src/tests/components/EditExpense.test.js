@@ -28,7 +28,7 @@ test('Should render EditExpense Form',()=>{
 test('should simulte click event',()=>{
     
         wrapper.find('button').at(0).simulate('click');
-        expect(history.push).toHaveBeenLastCalledWith('/');
+        expect(history.push).toHaveBeenLastCalledWith('/expensify');
         expect(removeExpense).toHaveBeenLastCalledWith('3');
 });
 
@@ -37,7 +37,7 @@ test('SHOULD HANDLE EDIT EXPENSE SPIES',()=>{
   
  
     wrapper.find('Expenseform').prop('onSubmit')(expenses[2]);
-    expect(history.push).toHaveBeenLastCalledWith('/');
+    expect(history.push).toHaveBeenLastCalledWith('/expensify');
     expect(editExpense).toHaveBeenLastCalledWith(expenses[2].id,expenses[2])
 
 });
