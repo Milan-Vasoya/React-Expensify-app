@@ -28,7 +28,7 @@ export class EditExpensePage extends React.Component {
                         onSubmit={this.onSubmit}
                     />
 
-                    <button className='button button--secondary' onClick={this.onClick} > Remove </button>
+                    <button className='button button--secondary' onClick={this.onClick} > Remove Expense </button>
                 </div>
             </div>
         );
