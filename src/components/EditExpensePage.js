@@ -5,23 +5,31 @@ import { startEditExpense, startRemoveExpense } from '../actions/expenses';
 
 
 export class EditExpensePage extends React.Component {
-    onSubmit= (expense)=>{
+    onSubmit = (expense) => {
         this.props.startEditExpense(this.props.expense.id, expense);
         this.props.history.push('/expensify');
     }
-    onClick=(e)=>{
-       this.props.startRemoveExpense(this.props.expense.id);
+    onClick = (e) => {
+        this.props.startRemoveExpense(this.props.expense.id);
         this.props.history.push('/expensify');
 
     }
     render() {
         return (
             <div>
-                <ExpenseForm
-                    expense={this.props.expense}
-                    onSubmit={this.onSubmit}
-                />
-                <button onClick={this.onClick} > Remove </button>
+                <div className="page-header">
+                    <div className="content-containter">
+                        <h1 className="header__title">Edit Expense</h1>
+                    </div>
+                </div> 
+                <div className="content-containter" >
+                    <ExpenseForm
+                        expense={this.props.expense}
+                        onSubmit={this.onSubmit}
+                    />
+
+                    <button className='button button--secondary' onClick={this.onClick} > Remove </button>
+                </div>
             </div>
         );
     }
@@ -38,10 +46,10 @@ const mapStateToProps = (state, props) => {
 };
 
 const mapDispatchToprops = (dispatch) => {
-return{
-    startEditExpense:(id,expense)=>dispatch(startEditExpense(id, expense)),
-    startRemoveExpense:(id)=>dispatch( startRemoveExpense(id))
-}
+    return {
+        startEditExpense: (id, expense) => dispatch(startEditExpense(id, expense)),
+        startRemoveExpense: (id) => dispatch(startRemoveExpense(id))
+    }
 }
 
-export default connect(mapStateToProps,mapDispatchToprops)(EditExpensePage);
+export default connect(mapStateToProps, mapDispatchToprops)(EditExpensePage);
